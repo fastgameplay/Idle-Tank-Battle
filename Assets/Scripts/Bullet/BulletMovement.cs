@@ -10,7 +10,6 @@ public class BulletMovement : MonoBehaviour{
         set
         {
             _target = value;
-            transform.LookAt(value);
             _isMoving = true;
         }
     }

@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(BulletMovement))]
+[RequireComponent(typeof(BulletColision))]
+[RequireComponent(typeof(DeathManager))]
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    BulletMovement _cachedBulletMovement;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake(){
+        _cachedBulletMovement = GetComponent<BulletMovement>();
+    }
+    public void Shoot(Transform target){
+        transform.LookAt(target);
+        _cachedBulletMovement.Target = target;
+
     }
 }
