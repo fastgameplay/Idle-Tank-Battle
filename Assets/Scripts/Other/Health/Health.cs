@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DeathManager))]
 public class Health : MonoBehaviour
 {
     public int MaxHealth{
@@ -35,7 +34,6 @@ public class Health : MonoBehaviour
 
     void Awake(){
         _cachedDeathManager = GetComponent<DeathManager>();
-        //_cachedHealthBar = GetComponent<HealthBar>();
     }
     public void Damage(int amount){
         CurrentHealth -= amount;
