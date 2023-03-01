@@ -1,11 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(BulletColision))]
+public class BulletMovement : MonoBehaviour{
+    
+    public Transform Target{ 
+        get
+        { 
+            return _target;
+        } 
+        set
+        {
+            _target = value;
+            transform.LookAt(value);
+            _isMoving = true;
+        }
+    }
+    private Transform _target;
 
-public class BulletMovement : MonoBehaviour
-{
-    // Target location
-    // Destroy after Bullet
-    // send to bulletColision target
-    // destroy via object destroyer
+    [SerializeField]
+    private float _speed;
+
+    private BulletColision _cachedColisionHandler;
+    private bool _isMoving;
+
+    void Awake()
+    {
+        _cachedColisionHandler = GetComponent<BulletColision>();
+    }
+
+    void Update()
+    {
+        if(_isMoving){
+            transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
+
+            if(Vector3.Distance(transform.position,_target.position) < 0.25f){
+                _cachedColisionHandler.CollidedWith(_target);
+            }
+
+        }
+        
+    }
+    
 }
