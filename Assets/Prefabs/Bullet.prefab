@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd157b63be2c7b4ab02c7ed861a54b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 23.72
 --- !u!114 &-9085216361056937614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b14c25bcca4e540aba2609dc9761e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tempDamage: 5
 --- !u!114 &-1949740335488038991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDestroyable: 1
-  _deathParticlePrefab: {fileID: 0}
+  _deathParticlePrefab: {fileID: 518542126592745185, guid: 9c7e89f9a090f014c9c580d09bdc3714, type: 3}
 --- !u!1001 &7620565091352991462
 PrefabInstance:
   m_ObjectHideFlags: 0

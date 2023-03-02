@@ -28,10 +28,11 @@ public class BulletMovement : MonoBehaviour{
 
     void Update()
     {
+        if(_target == null) return;
         if(_isMoving){
             transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
 
-            if(Vector3.Distance(transform.position,_target.position) < 0.25f){
+            if(Vector3.Distance(transform.position,_target.position) < 0.5f){
                 _cachedColisionHandler.CollidedWith(_target);
             }
 
