@@ -35,12 +35,13 @@ public class Health : MonoBehaviour
 
     void Awake(){
         _cachedDeathManager = GetComponent<DeathManager>();
+    }
+    void Start(){
+        
         MaxHealth = 1000;
     }
     public void Damage(int amount){
-        Debug.Log($"DAmage Income {amount} with current health {CurrentHealth}");
         CurrentHealth -= amount;
-        Debug.Log($"HealthAfter Damage {CurrentHealth}");
         //PopTextHandler.pop(transform.location, Quaternion.identity, -amount, red);
     }
 }

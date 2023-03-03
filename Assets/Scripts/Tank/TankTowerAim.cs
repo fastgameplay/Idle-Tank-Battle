@@ -13,7 +13,7 @@ public class TankTowerAim : MonoBehaviour
         }
     }
     Transform _target;
-    
+
     void Update(){
         AimTowerHorizontal();
     }
@@ -21,5 +21,8 @@ public class TankTowerAim : MonoBehaviour
         if(_target != null){
             transform.LookAt(new Vector3(_target.position.x, transform.position.y, _target.position.z));
         }
+    }
+    void AimBarrelVertical(){
+
     }
 }

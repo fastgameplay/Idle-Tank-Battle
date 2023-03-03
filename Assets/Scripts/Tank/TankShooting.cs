@@ -8,10 +8,6 @@ public class TankShooting : MonoBehaviour
     [SerializeField] TankTowerAim _tankTowerAim;
     [SerializeField] Transform _shootPoint;
     [SerializeField] int _tankDamage;
-    [SerializeField] Transform TempTarget;
-    void Start(){
-        ShootAt(TempTarget);
-    }
 
     public void ShootAt(Transform target){
         int timesToShoot = target.GetComponent<Health>().CurrentHealth / _tankDamage;
