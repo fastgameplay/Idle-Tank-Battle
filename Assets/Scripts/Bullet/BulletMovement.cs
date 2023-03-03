@@ -14,7 +14,8 @@ public class BulletMovement : MonoBehaviour{
         }
     }
     private Transform _target;
-
+    [SerializeField]
+    private Vector3 _targetOffset;
     [SerializeField]
     private float _speed;
 
@@ -30,7 +31,7 @@ public class BulletMovement : MonoBehaviour{
     {
         if(_target == null) return;
         if(_isMoving){
-            transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _target.position+_targetOffset, _speed * Time.deltaTime);
 
             if(Vector3.Distance(transform.position,_target.position) < 0.5f){
                 _cachedColisionHandler.CollidedWith(_target);

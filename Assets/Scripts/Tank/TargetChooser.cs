@@ -5,7 +5,6 @@ using UnityEngine;
 public class TargetChooser : MonoBehaviour{
     
     [SerializeField] List<Transform> _targets = new List<Transform>();
-    
     TankShooting _cachedTankShooter;
     Transform _currentTarget;
     bool _isActive;
@@ -14,7 +13,7 @@ public class TargetChooser : MonoBehaviour{
     }
 
     void Update(){
-        if(_isActive) return;
+        if(_isActive == false) return;
         if(_currentTarget != null) return;
         ChooseTarget();
     }
